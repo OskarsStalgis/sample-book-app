@@ -59,6 +59,10 @@ def deploy(String enviroment){
 
 }
 
-def test(String enviroment){
-    echo "API test executuon against node application on ${enviroment} environment.."
+def test(String environment){
+    echo "API test executuon against node application on ${environment} environment.."
+    sh "docker pull mtararujs/api-tests"
+    def directory = pwd()
+    sh "echo '${directory}'"
+    sh "docker run --rm --network=sample-book-app-network-compose -v '${directory}':/api-tests/mochawesome-report/ mtararujs/api-tests run BOOKS BOOKS_${environment}"
 }
