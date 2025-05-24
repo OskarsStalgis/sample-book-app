@@ -50,9 +50,9 @@ def buildApp(){
 def deploy(String enviroment){
     echo "Deployment of node application on ${enviroment} environment.."
     sh "docker pull oskarsstalgis/sample-book-app"
-    sh "docker compose stop sample-book-app-${evniroment.toLowerCase()}"
-    sh "docker compose rm sample-book-app-${evniroment.toLowerCase()}"
-    sh "docker compose up -d sample-book-app-${evniroment.toLowerCase()}"
+    sh "docker compose stop sample-book-app-${enviroment.toLowerCase()}"
+    sh "docker compose rm sample-book-app-${enviroment.toLowerCase()}"
+    sh "docker compose up -d sample-book-app-${enviroment.toLowerCase()}"
 
 }
 
