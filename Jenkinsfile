@@ -42,12 +42,12 @@ pipeline {
 def buildApp(){
     echo "Building of node application is starting.."
     sh "docker build -t oskarsstalgis/sample-book-application ."
-    
+
     echo "Pushing img to Docker registry.."
     sh "docker push oskarsstalgis/sample-book-application"
 }
 
-def deploy(String environment){
+def deploy(String enviroment){
     echo "Deployment of node application on ${enviroment} environment.."
 }
 
