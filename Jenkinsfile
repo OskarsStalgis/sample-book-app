@@ -8,7 +8,7 @@ pipeline {
         }
         stage('deploy-dev') {
             steps {
-                deploy("DEV")
+                deploy("dev")
             }
         }
         stage('test-dev') {
